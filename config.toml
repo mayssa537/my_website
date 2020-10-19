@@ -1,7 +1,7 @@
 # Site settings
 baseURL = "https://mayssam.netlify.app//"
 languageCode = "en-us"
-title = "Mayssa"
+title = "Portfolio Website for Mayssa Maring"
 theme = "forty"
 
 # Enter your tracking code to enable Google Analytics
@@ -20,7 +20,7 @@ disqusShortname = ""
 
   # Provide your metadata here.
   name = "Mayssa Maring"
-  description = "Your description"
+  description = "Originally from Los Angeles, California, I am currently pursuing a Masters degree in Financial Analysis at London Business School. Despite the stereotype that accompanies my studies, I find myself to be a 'people person.' I thrive in group work, although I do usually prefer to work independently. As for my interests, I have experience in quite a range areas, from special needs education, beauty pageants, journalism, travel, and dance. While all are rather unrelated, they've encouraged me to keep an open mind and to take every opportunity to learn. In addition, they've all contributed tremendously to my abilities, such as practicing patience, managing my time, adapting quickly, and remaining organised. "
 
   # Link custom assets relative to /static
   custom_css = []
@@ -37,8 +37,8 @@ disqusShortname = ""
 
   # Navigation Section
   [params.navigation]
-    title = "Forty"
-    subtitle = "By HTML5 Up"
+    title = "Mayssa Maring"
+    #subtitle = "By HTML5 Up"
     menu = "Menu"
     # Optional logo as brand stored in img/
     # logo = "logo.png"
@@ -48,16 +48,16 @@ disqusShortname = ""
       url = "#"
 
     [[params.navigation.links]]
-      name = "Blogs"
-      url = "blogs"
+      name = "Projects"
+      url = "projects"
 
     [[params.navigation.links]]
-      name = "Generic Blog"
-      url = "blogs/ipsum"
+      name = "Airbnb"
+      url = "projects/airbnb"
 
     [[params.navigation.links]]
-      name = "Elements"
-      url = "elements.html"
+      #name = "Elements"
+      #url = "elements.html"
 
     # Add custom links here by uncommenting code below. To remove links just delete
     # the [[params.navigation.links]] map associated with that link. Copy and paste
@@ -73,8 +73,8 @@ disqusShortname = ""
 
     # Button Style 2
     [[params.navigation.button2]]
-      name = "Log In"
-      url = "#"
+      #name = "Log In"
+      #url = "#"
 
 
   # Banner section
@@ -82,7 +82,7 @@ disqusShortname = ""
     # To change the background image on the homepage banner, replace 'banner.jpg' in
     # the 'static/img' folder.
     title = "Hi, my name is Mayssa"
-    subtitle = "A RESPONSIVE SITE TEMPLATE DESIGNED BY HTML5 UP\nAND RELEASED UNDER THE CREATIVE COMMONS."
+    subtitle = "Welcome to my portfolio. Here you can find a few of the projects I have done in R, as well as my contact info and CV."
     buttonText = "Get Started"
 
 
@@ -172,7 +172,7 @@ disqusShortname = ""
     # by copying the corresponding map with frontmatter code.
     [[params.contact.email]]
     title = "Email"
-    email = "example@domain.com"
+    email = "mmaring.mfa2021@london.edu"
 
     [[params.contact.phone]]
     title = "Phone"
@@ -190,29 +190,15 @@ disqusShortname = ""
     copyright = "Company Name"
 
     # Uses font awesome icons
-    [[params.footer.social]]
-      icon = "fa-twitter"
-      url= "https://www.twitter.com"
-      label = "Twitter"
 
-    [[params.footer.social]]
-      icon = "fa-facebook"
-      url= "https://www.facebook.com"
-      label = "Facebook"
-
-    [[params.footer.social]]
-      icon = "fa-instagram"
-      url= "https://www.instagram.com"
-      label = "Instagram"
-    
     [[params.footer.social]]
       icon = "fa-github"
-      url= "https://www.github.com"
+      url= "https://www.github.com/mayssa537"
       label = "GitHub"
 
     [[params.footer.social]]
       icon = "fa-linkedin"
-      url= "https://www.linkedin.com"
+      url= "https://www.linkedin.com/in/mayssa-maring"
       label = "LinkedIn"
 
     [[params.footer.quicklinks]]
