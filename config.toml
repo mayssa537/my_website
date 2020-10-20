@@ -104,10 +104,10 @@ disqusShortname = ""
       url = "blogs/paydiscrimination"
 
     [[params.tiles.showcase]]
-      title = "Magna"
-      subtitle = "Lorem Etiam Nullam"
-      image = "pic03.jpg"
-      url = "blogs/magna"
+      title = "Historical Yield Curves - Do they really flatten before a recession?"
+      subtitle = "Using the FRED Database for US data we plot yield curves from 1999 to recognize a pattern."
+      image = "recession.jpg"
+      url = "blogs/yields"
 
     [[params.tiles.showcase]]
       title = "Ipsum"
