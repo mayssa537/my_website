@@ -1,6 +1,6 @@
 # Site settings
 baseURL = "https://mayssam.netlify.app/"
-languageCode = "en-us"
+languageCode = "en-us"se
 title = "Portfolio Website for Mayssa Maring"
 theme = "forty"
 
@@ -108,7 +108,7 @@ disqusShortname = ""
       title = "Do men earn more than women?"
       subtitle = "Using Omega Plc's data, we look at if salary differences are due to discrimination."
       image = "gender-pay-gap.jpg"
-      url = "projects/project1""
+      url = "projects/project1"
 
     [[params.tiles.showcase]]
       title = "Historical Yield Curves - Do they really flatten before a recession?"
