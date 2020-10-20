@@ -5,7 +5,7 @@ categories:
 description: Do men make more money than women?
 draft: false
 keywords: ""
-slug: paydiscrimination
+slug: project1
 title: Do men make more money than women?
 subtitle: Using Omega Plc's data, we look at if salary differences are due to discrimination.
 ---
