@@ -102,13 +102,13 @@ disqusShortname = ""
       title = "Airbnbs in Athens"
       subtitle = "What variables affect the prices of Aribnbs in Athens, Greece?"
       image = "airbnb.png"
-      url = "projects/project5
+      url = "Projects/athens"
 
     [[params.tiles.showcase]]
       title = "Do men earn more than women?"
       subtitle = "Using Omega Plc's data, we look at if salary differences are due to discrimination."
       image = "gender-pay-gap.jpg"
-      url = "projects/project1"
+      url = "projects/paydiscrimination""
 
     [[params.tiles.showcase]]
       title = "Historical Yield Curves - Do they really flatten before a recession?"
