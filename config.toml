@@ -102,19 +102,19 @@ disqusShortname = ""
       title = "Airbnbs in Athens"
       subtitle = "What variables affect the prices of Aribnbs in Athens, Greece?"
       image = "airbnb.png"
-      url = "Projects/athens"
+      url = "projects/project5"
 
     [[params.tiles.showcase]]
       title = "Do men earn more than women?"
       subtitle = "Using Omega Plc's data, we look at if salary differences are due to discrimination."
       image = "gender-pay-gap.jpg"
-      url = "projects/paydiscrimination""
+      url = "projects/project1""
 
     [[params.tiles.showcase]]
       title = "Historical Yield Curves - Do they really flatten before a recession?"
       subtitle = "Using the FRED Database for US data we plot yield curves from 1999 to recognize a pattern."
       image = "recession.jpg"
-      url = "projects/project2/yield_curve"
+      url = "projects/project2"
 
     [[params.tiles.showcase]]
       title = "Donald Trump's Approval Rating"
@@ -126,7 +126,7 @@ disqusShortname = ""
       title = "Who uses Social Media?"
       subtitle = "Using the General Social Survey to determine if a specific gender uses social media more"
       image = "social_media.jpg"
-      url = "projects/twitter"
+      url = "projects/project4"
 
 
     # You can make more showcases by copy and pasting the code above
