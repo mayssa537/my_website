@@ -91,11 +91,18 @@ disqusShortname = ""
     enable = true
     # Display your showcases here.
     
+    
     [[params.tiles.showcase]]
       title = "About Me"
       subtitle = "Short Description of who I am"
       image = "flag.png"
       url = "aboutme"
+      
+      [[params.tiles.showcase]]
+      title = "Airbnbs in Athens"
+      subtitle = "What variables affect the prices of Aribnbs in Athens, Greece?"
+      image = "airbnb.png"
+      url = "Projects/athens"
 
     [[params.tiles.showcase]]
       title = "Do men earn more than women?"
@@ -118,14 +125,10 @@ disqusShortname = ""
     [[params.tiles.showcase]]
       title = "Who uses Social Media?"
       subtitle = "Using the General Social Survey to determine if a specific gender uses social media more"
-      image = "pic05.jpg"
+      image = "social_media.jpg"
       url = "projects/twitter"
 
-    [[params.tiles.showcase]]
-      title = "Etiam"
-      subtitle = "Feugiat Amet Tempus"
-      image = "social_media.jpg"
-      url = "blogs/ipsum"
+
     # You can make more showcases by copy and pasting the code above
 
   [params.blog]
