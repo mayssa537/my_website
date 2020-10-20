@@ -98,10 +98,10 @@ disqusShortname = ""
       url = "aboutme"
 
     [[params.tiles.showcase]]
-      title = "Tempus"
-      subtitle = "Feugiat Amet Tempus"
-      image = "pic02.jpg"
-      url = "blogs/tempus"
+      title = "Do men earn more than women?"
+      subtitle = "Using Omega Plc's data, we look at if salary differences are due to discrimination."
+      image = "gender-pay-gap.jpg"
+      url = "blogs/paydiscrimination"
 
     [[params.tiles.showcase]]
       title = "Magna"
