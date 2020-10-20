@@ -120,7 +120,7 @@ disqusShortname = ""
       title = "Donald Trump's Approval Rating"
       subtitle = "Looking at Donald Trump's ratings from 2017-2020 "
       image = "trump.jpg"
-      url = "projects/trump"
+      url = "projects/project3"
 
     [[params.tiles.showcase]]
       title = "Who uses Social Media?"

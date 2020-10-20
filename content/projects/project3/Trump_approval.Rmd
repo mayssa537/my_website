@@ -1,19 +1,13 @@
 ---
-title: 'Trump Approval Ratings'
-author: "Daniel Zeiner, Balint Szutor, Tao Yan, Mayssa Maring, Eudald Puig"
-date: "04/10/2020"
-output:
-  html_document:
-    theme: flatly
-    highlight: zenburn
-    number_sections: yes
-    toc: yes
-    toc_float: yes
-    code_folding: show
-  word_document:
-    toc: yes
-  pdf_document:
-    toc: yes
+categories:
+- ""
+- ""
+description: Trump Ratings
+draft: false
+keywords: ""
+slug: trump
+title: Donald Trump's Approval Rating
+subtitle: Looking at Donald Trump's ratings from 2017-2020
 ---
 
 Introductory code:
