@@ -1,15 +1,13 @@
 ---
-title: "Group project - Athen Airbnbs"
-author: "Group 19: Daniel Zeiner, Balint Szutor, Tao Yan, Mayssa Maring, Eudald Jove"
-date: "`r Sys.Date()`"
-output:
-  html_document:
-    theme: flatly
-    highlight: zenburn
-    number_sections: yes
-    toc: yes
-    toc_float: yes
-    code_folding: show
+categories:
+- ""
+- ""
+description: Airbnbs in Athens
+draft: false
+keywords: ""
+slug: athens
+title: How much are Airbnbs in Athens?
+subtitle: What variables affect the prices of Aribnbs in Athens, Greece?
 ---
 
 
@@ -88,7 +86,7 @@ Our final regression model was used to predict the price for 2 people to rent a 
 
 ```{r data, include=FALSE}
 # Data
-athens_data <- read_csv("data/listings.csv")
+athens_data <- read_csv("listings.csv")
 
 glimpse(athens_data)
 ```
