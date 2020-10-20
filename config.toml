@@ -116,15 +116,15 @@ disqusShortname = ""
       url = "projects/trump"
 
     [[params.tiles.showcase]]
-      title = "Consequat"
-      subtitle = "Ipsum Dolor Sit Amet"
+      title = "Who uses Social Media?"
+      subtitle = "Using the General Social Survey to determine if a specific gender uses social media more"
       image = "pic05.jpg"
-      url = "blogs/ipsum"
+      url = "projects/twitter"
 
     [[params.tiles.showcase]]
       title = "Etiam"
       subtitle = "Feugiat Amet Tempus"
-      image = "pic06.jpg"
+      image = "social_media.jpg"
       url = "blogs/ipsum"
     # You can make more showcases by copy and pasting the code above
 
