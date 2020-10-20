@@ -101,19 +101,19 @@ disqusShortname = ""
       title = "Do men earn more than women?"
       subtitle = "Using Omega Plc's data, we look at if salary differences are due to discrimination."
       image = "gender-pay-gap.jpg"
-      url = "blogs/paydiscrimination"
+      url = "projects/paydiscrimination"
 
     [[params.tiles.showcase]]
       title = "Historical Yield Curves - Do they really flatten before a recession?"
       subtitle = "Using the FRED Database for US data we plot yield curves from 1999 to recognize a pattern."
       image = "recession.jpg"
-      url = "blogs/yields"
+      url = "projects/yields"
 
     [[params.tiles.showcase]]
-      title = "Ipsum"
-      subtitle = "Nisl Sed Aliquam"
-      image = "pic04.jpg"
-      url = "blogs/ipsum"
+      title = "Donald Trump's Approval Rating"
+      subtitle = "Looking at Donald Trump's ratings from 2017-2020 "
+      image = "trump.jpg"
+      url = "projects/trump"
 
     [[params.tiles.showcase]]
       title = "Consequat"

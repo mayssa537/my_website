@@ -1,0 +1,145 @@
+---
+title: 'Trump Approval Ratings'
+author: "Daniel Zeiner, Balint Szutor, Tao Yan, Mayssa Maring, Eudald Puig"
+date: "04/10/2020"
+output:
+  html_document:
+    theme: flatly
+    highlight: zenburn
+    number_sections: yes
+    toc: yes
+    toc_float: yes
+    code_folding: show
+  word_document:
+    toc: yes
+  pdf_document:
+    toc: yes
+---
+
+Introductory code:
+
+```{r, setup, include=FALSE}
+knitr::opts_chunk$set(
+  message = FALSE, 
+  warning = FALSE, 
+  tidy=FALSE,     # display code as typed
+  size="small")   # slightly smaller font for code
+options(digits = 3)
+
+# default figure size
+knitr::opts_chunk$set(
+  fig.width=6.75, 
+  fig.height=6.75,
+  fig.align = "center"
+)
+```
+
+
+Loading libraries:
+
+```{r load-libraries, include=FALSE}
+library(tidyverse)  # Load ggplot2, dplyr, and all the other tidyverse packages
+library(mosaic)
+library(ggthemes)
+library(lubridate)
+library(here)
+library(skimr)
+library(janitor)
+library(httr)
+library(readxl)
+library(vroom)
+```
+
+
+
+# Trump's Approval Margins
+
+Loading data:
+
+```{r, cache=TRUE}
+# Import approval polls data
+
+setwd("C:/Users/mayss/Documents/LBS_Term1/Data Analytics for Finance/my_website/content/projects/project3")
+
+approval_polllist <- read_csv(file='data/approval_polllist.csv')
+
+# or directly off fivethirtyeight website
+# approval_polllist <- read_csv('https://projects.fivethirtyeight.com/trump-approval-data/approval_polllist.csv') 
+
+glimpse(approval_polllist)
+
+# Use `lubridate` to fix dates, as they are given as characters.
+```
+
+## Create a plot
+
+We calculate the average net approval rate (approve- disapprove) for each week since he got into office:
+
+```{r}
+approval_polllist %>% 
+  mutate(
+    week = week(as.Date(enddate, format="%d/%m/%Y"))
+  ) %>% 
+  summarise(
+    week = week,
+    N = n(),
+    std_dev = sd(approve, na.rm=F),
+    net_approval_rate = mean(approve) - mean(disapprove)) %>% 
+  summarise(
+    week = week,
+    net_approval_rate = net_approval_rate,
+    N = N,
+    std_dev = std_dev,
+    upper_ci = mean(net_approval_rate) + 1.96*(std_dev/sqrt(N)),
+    lower_ci = mean(net_approval_rate) - 1.96*(std_dev/sqrt(N))
+  )
+
+Trump_approval<-approval_polllist%>%
+  mutate(date=as.Date(approval_polllist$enddate, format="%m/%d/%Y"),
+       week=week(date),
+       year=year(date),
+       net_approval=approve-disapprove) %>% 
+  group_by(week,year)%>%
+  summarise(mean=mean(net_approval),
+            stdev=sd(net_approval),
+            count=n(),
+            se=stdev/sqrt(count),
+            t_critical=qt(0.975,count-1),
+            lower_bound=mean-t_critical*se,
+            upper_bound=mean+t_critical*se)
+
+Trump_approval %>% 
+  ggplot(aes(x=week, y=mean)) + 
+  geom_point() + 
+  geom_line()+
+  geom_ribbon(aes(ymin=lower_bound, ymax=upper_bound), linetype=2, alpha=0.5) +
+  facet_wrap(~year) +
+  geom_hline(yintercept = 0, color ="orange") +
+  xlab("Week of the year") +
+  ylab("Average net approval (%)") +
+  labs(title="Estimating Net Approval (approve-disapprove) for Donald Trump",
+       subtitle="Weekly average of polls")
+
+```
+
+You can facet by year, and add an orange line at zero. Your plot should look like this:
+
+```{r trump_margins, echo=FALSE, out.width="100%"}
+
+
+knitr::include_graphics("C:/Users/mayss/Documents/LBS_Term1/Data Analytics for Finance/my_website/content/projects/project3/images/trump_approval_margin.png")
+```
+
+## Compare Confidence Intervals
+
+Compare the confidence intervals for `week 15` (6-12 April 2020) and `week 34` (17-23 August 2020). 
+
+```{r}
+Trump_approval %>% 
+  filter(
+    year ==2020,
+    week %in% c(15, 34))
+```
+
+Coronavirus affected voters approval rating of Donald Trump, as we enter week 34 with still little action on the containment of the virus voters became more uncertain and less voters supported them
+
