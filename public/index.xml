@@ -1,45 +1,45 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Mayssa</title>
+    <title>Portfolio Website for Mayssa Maring</title>
     <link>/</link>
-    <description>Recent content on Mayssa</description>
+    <description>Recent content on Portfolio Website for Mayssa Maring</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Tue, 31 Oct 2017 22:42:51 -0500</lastBuildDate><atom:link href="/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Aliquam</title>
-      <link>/blogs/aliquam/</link>
+      <link>/projects/aliquam/</link>
       <pubDate>Tue, 31 Oct 2017 22:42:51 -0500</pubDate>
       
-      <guid>/blogs/aliquam/</guid>
+      <guid>/projects/aliquam/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Tempus</title>
-      <link>/blogs/tempus/</link>
+      <link>/projects/tempus/</link>
       <pubDate>Tue, 31 Oct 2017 22:26:13 -0500</pubDate>
       
-      <guid>/blogs/tempus/</guid>
+      <guid>/projects/tempus/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Magna</title>
-      <link>/blogs/magna/</link>
+      <link>/projects/magna/</link>
       <pubDate>Tue, 31 Oct 2017 22:26:09 -0500</pubDate>
       
-      <guid>/blogs/magna/</guid>
+      <guid>/projects/magna/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Ipsum</title>
-      <link>/blogs/ipsum/</link>
+      <link>/projects/ipsum/</link>
       <pubDate>Tue, 31 Oct 2017 21:28:43 -0500</pubDate>
       
-      <guid>/blogs/ipsum/</guid>
+      <guid>/projects/ipsum/</guid>
       <description>Nullam et orci eu lorem consequat tincidunt vivamus et sagittis magna sed nunc rhoncus condimentum sem. In efficitur ligula tate urna. Maecenas massa sed magna lacinia magna pellentesque lorem ipsum dolor. Nullam et orci eu lorem consequat tincidunt. Vivamus et sagittis tempus.</description>
     </item>
     
@@ -52,6 +52,68 @@
       <description>R MarkdownThis is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see http://rmarkdown.rstudio.com.
 You can embed an R code chunk like this:
 summary(cars)## speed dist ## Min. : 4.0 Min. : 2.00 ## 1st Qu.:12.0 1st Qu.: 26.00 ## Median :15.0 Median : 36.00 ## Mean :15.4 Mean : 42.98 ## 3rd Qu.</description>
+    </item>
+    
+    <item>
+      <title>Do men make more money than women?</title>
+      <link>/projects/project1/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/projects/project1/</guid>
+      <description>Omega Group plc- Pay DiscriminationAt the last board meeting of Omega Group Plc., the headquarters of a large multinational company, the issue was raised that women were being discriminated in the company, in the sense that the salaries were not the same for male and female executives. A quick analysis of a sample of 50 employees (of which 24 men and 26 women) revealed that the average salary for men was about 8,700 higher than for women.</description>
+    </item>
+    
+    <item>
+      <title>Donald Trump&#39;s Approval Rating</title>
+      <link>/projects/project3/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/projects/project3/</guid>
+      <description>Introductory code:
+Loading libraries:
+Trump’s Approval MarginsLoading data:
+# Import approval polls datasetwd(&amp;quot;C:/Users/mayss/Documents/LBS_Term1/Data Analytics for Finance/my_website/content/projects/project3&amp;quot;)approval_polllist &amp;lt;- read_csv(file=&amp;#39;data/approval_polllist.csv&amp;#39;)# or directly off fivethirtyeight website# approval_polllist &amp;lt;- read_csv(&amp;#39;https://projects.fivethirtyeight.com/trump-approval-data/approval_polllist.csv&amp;#39;) glimpse(approval_polllist)## Rows: 15,619## Columns: 22## $ president &amp;lt;chr&amp;gt; &amp;quot;Donald Trump&amp;quot;, &amp;quot;Donald Trump&amp;quot;, &amp;quot;Donald Trump&amp;quot;,...## $ subgroup &amp;lt;chr&amp;gt; &amp;quot;All polls&amp;quot;, &amp;quot;All polls&amp;quot;, &amp;quot;All polls&amp;quot;, &amp;quot;All pol...## $ modeldate &amp;lt;chr&amp;gt; &amp;quot;9/27/2020&amp;quot;, &amp;quot;9/27/2020&amp;quot;, &amp;quot;9/27/2020&amp;quot;, &amp;quot;9/27/20...## $ startdate &amp;lt;chr&amp;gt; &amp;quot;1/20/2017&amp;quot;, &amp;quot;1/20/2017&amp;quot;, &amp;quot;1/20/2017&amp;quot;, &amp;quot;1/21/20.</description>
+    </item>
+    
+    <item>
+      <title>Historical Yield Curves - Do they really flatten before a recession?</title>
+      <link>/projects/project2/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/projects/project2/</guid>
+      <description>Challenge 1: Yield Curve inversionEvery so often, we hear warnings from commentators on the “inverted yield curve” and its predictive power with respect to recessions. An explainer what a inverted yield curve is can be found here. If you’d rather listen to something, here is a great podcast from NPR on yield curve indicators
+In addition, many articles and commentators think that, e.g., Yield curve inversion is viewed as a harbinger of recession.</description>
+    </item>
+    
+    <item>
+      <title>How much are Airbnbs in Athens?</title>
+      <link>/projects/project5/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/projects/project5/</guid>
+      <description>Airbnb Project - AthensIntroductionOur group project focuses on the analysis of the Airbnb data from Athens AirBnB dataset. In our project we will perform Data Cleaning, Exploratory Data Analysis, Data visualizations and finally a Regression Analysis. The final output of all the analysis and the final regression model is a multivariate regression model that predicts the nightly cost per stay based on distance from center, number of accomodates and number of bathrooms necessary.</description>
+    </item>
+    
+    <item>
+      <title>My CV</title>
+      <link>/projects/project6/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/projects/project6/</guid>
+      <description>This Portfolio shows my work in R, however I do have experience in Python, SQL, HTML, CSS, and JavaScript. Please find the relevant works on my GitHub (link at the bottom of the page).
+If you have any suggestions, please get in touch</description>
+    </item>
+    
+    <item>
+      <title>Twitter</title>
+      <link>/projects/project4/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/projects/project4/</guid>
+      <description>Introductory code:
+Loading libraries:
+General Social Survey (GSS)Loading data file:
+setwd(&amp;quot;C:/Users/mayss/Documents/LBS_Term1/Data Analytics for Finance/my_website/content/projects/project4&amp;quot;)gss &amp;lt;- read_csv((file=&amp;quot;data/smallgss2016.csv&amp;quot;), na = c(&amp;quot;&amp;quot;, &amp;quot;Don&amp;#39;t know&amp;quot;,&amp;quot;No answer&amp;quot;, &amp;quot;Not applicable&amp;quot;))print(gss)## # A tibble: 2,867 x 7## emailmin emailhr snapchat instagrm twitter sex degree ## &amp;lt;chr&amp;gt; &amp;lt;chr&amp;gt; &amp;lt;chr&amp;gt; &amp;lt;chr&amp;gt; &amp;lt;chr&amp;gt; &amp;lt;chr&amp;gt; &amp;lt;chr&amp;gt; ## 1 0 12 NA NA NA Male Bachelor ## 2 30 0 No No No Male High school ## 3 NA NA No No No Male Bachelor ## 4 10 0 NA NA NA Female High school ## 5 NA NA Yes Yes No Female Graduate ## 6 0 2 No Yes No Female Junior college## 7 0 40 NA NA NA Male High school ## 8 NA NA Yes Yes No Female High school ## 9 0 0 NA NA NA Male High school ## 10 NA NA No No No Male Junior college## # .</description>
     </item>
     
   </channel>

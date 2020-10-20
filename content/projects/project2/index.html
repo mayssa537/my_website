@@ -5,9 +5,9 @@ categories:
 description: Analysis of US yield curve
 draft: false
 keywords: ""
-slug: yieldcurve
+slug: project2
 title: Historical Yield Curves - Do they really flatten before a recession?
-subtitle: Using the FRED Database for US data we plot yield curves from 1999 to recognize a pattern.
+subtitle: Using the FRED Database for US data we plot yield curves to recognize a pattern.
 ---
 
 
@@ -140,15 +140,15 @@ glimpse(df)</code></pre>
 <p>This may seem long but it should be easy to produce the following three plots</p>
 <div id="yields-on-us-rates-by-duration-since-1960" class="section level3">
 <h3>Yields on US rates by duration since 1960</h3>
-<p><img src="C:/Users/mayss/Documents/LBS_Term1/Data Analytics for Finance/my_website/images/yield_curve1.png" width="100%" style="display: block; margin: auto;" /><img src="//projects/project2/yield_curve_files/figure-html/yield_curve_1-2.png" width="100%" style="display: block; margin: auto;" /></p>
+<p><img src="C:/Users/mayss/Documents/LBS_Term1/Data Analytics for Finance/my_website/images/yield_curve1.png" width="100%" style="display: block; margin: auto;" /><img src="/projects/project2/index_files/figure-html/yield_curve_1-2.png" width="100%" style="display: block; margin: auto;" /></p>
 </div>
 <div id="monthly-yields-on-us-rates-by-duration-since-1999-on-a-year-by-year-basis" class="section level3">
 <h3>Monthly yields on US rates by duration since 1999 on a year-by-year basis</h3>
-<p><img src="C:/Users/mayss/Documents/LBS_Term1/Data Analytics for Finance/my_website/images/yield_curve2.png" width="100%" style="display: block; margin: auto;" /><img src="//projects/project2/yield_curve_files/figure-html/yield_curve_2-2.png" width="100%" style="display: block; margin: auto;" /></p>
+<p><img src="C:/Users/mayss/Documents/LBS_Term1/Data Analytics for Finance/my_website/images/yield_curve2.png" width="100%" style="display: block; margin: auto;" /><img src="/projects/project2/index_files/figure-html/yield_curve_2-2.png" width="100%" style="display: block; margin: auto;" /></p>
 </div>
 <div id="month-and-10-year-yields-since-1999" class="section level3">
 <h3>3-month and 10-year yields since 1999</h3>
-<p><img src="C:/Users/mayss/Documents/LBS_Term1/Data Analytics for Finance/my_website/images/yield_curve3.png" width="100%" style="display: block; margin: auto;" /><img src="//projects/project2/yield_curve_files/figure-html/yield_curve_3-2.png" width="100%" style="display: block; margin: auto;" /></p>
+<p><img src="C:/Users/mayss/Documents/LBS_Term1/Data Analytics for Finance/my_website/images/yield_curve3.png" width="100%" style="display: block; margin: auto;" /><img src="/projects/project2/index_files/figure-html/yield_curve_3-2.png" width="100%" style="display: block; margin: auto;" /></p>
 <p>According to <a href="https://en.wikipedia.org/wiki/List_of_recessions_in_the_United_States">Wikipedia’s list of recession in the United States</a>, since 1999 there have been two recession in the US: between Mar 2001–Nov 2001 and between Dec 2007–June 2009. Does the yield curve seem to flatten before these recessions? Can a yield curve flattening really mean a recession is coming in the US? Since 1999, when did short-term (3 months) yield more than longer term (10 years) debt?</p>
 <p><em>The yield curve does flatten before each major recession. We can see in the graphs that the flattening of the yield curve does warn before each recession hits the US.We also notice that short term yielded more than long term during recession times, likely due to people being worried to invest in longer futures due to uncertainty.</em></p>
 <p>Besides calculating the spread (10year - 3months), there are a few things we need to do to produce our final plot</p>
@@ -224,7 +224,7 @@ diff_df %&gt;%
               fill=&quot;green&quot;, col=&quot;green&quot;, alpha=0.2) +
   geom_rect(data=recessions_df, inherit.aes=F,
             mapping=aes(xmin=recessions_df$xmin, xmax=recessions_df$xmax, ymin=recessions_df$ymin, ymax=recessions_df$ymax), color=&#39;grey&#39;, alpha=0.2)</code></pre>
-<p><img src="//projects/project2/yield_curve_files/figure-html/unnamed-chunk-1-1.png" width="648" style="display: block; margin: auto;" /></p>
+<p><img src="/projects/project2/index_files/figure-html/unnamed-chunk-1-1.png" width="648" style="display: block; margin: auto;" /></p>
 </div>
 </div>
 </div>

@@ -5,9 +5,9 @@ categories:
 description: Analysis of US yield curve
 draft: false
 keywords: ""
-slug: yieldcurve
+slug: project2
 title: Historical Yield Curves - Do they really flatten before a recession?
-subtitle: Using the FRED Database for US data we plot yield curves from 1999 to recognize a pattern.
+subtitle: Using the FRED Database for US data we plot yield curves to recognize a pattern.
 ---
 
 
