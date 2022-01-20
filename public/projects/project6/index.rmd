@@ -10,5 +10,5 @@ This Portfolio shows my work in R, however I do have experience in Python, SQL, 
     
   *If you have any suggestions, please get in touch*
   
-  <img src="CV.jpg" alt="drawing" width="800"/>
+  <img src="CV1.jpg" alt="drawing" width="800"/>
   
