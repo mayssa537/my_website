@@ -1,0 +1,256 @@
+---
+title: 'Twitter'
+author: "Daniel Zeiner, Balint Szutor, Tao Yan, Mayssa Maring, Eudald Puig"
+date: "04/10/2020"
+output:
+  html_document:
+    theme: flatly
+    highlight: zenburn
+    number_sections: yes
+    toc: yes
+    toc_float: yes
+    code_folding: show
+  word_document:
+    toc: yes
+  pdf_document:
+    toc: yes
+---
+
+Introductory code:
+
+```{r, setup, include=FALSE}
+knitr::opts_chunk$set(
+  message = FALSE, 
+  warning = FALSE, 
+  tidy=FALSE,     # display code as typed
+  size="small")   # slightly smaller font for code
+options(digits = 3)
+
+# default figure size
+knitr::opts_chunk$set(
+  fig.width=6.75, 
+  fig.height=6.75,
+  fig.align = "center"
+)
+```
+
+
+Loading libraries:
+
+```{r load-libraries, include=FALSE}
+library(tidyverse)  # Load ggplot2, dplyr, and all the other tidyverse packages
+library(mosaic)
+library(ggthemes)
+library(lubridate)
+library(here)
+library(skimr)
+library(janitor)
+library(httr)
+library(readxl)
+library(vroom)
+```
+
+
+
+
+# General Social Survey (GSS)
+
+Loading data file:
+
+
+```{r, read_gss_data, cache=TRUE}
+
+setwd("C:/Users/mayss/Documents/LBS_Term1/Data Analytics for Finance/my_website/content/projects/project4")
+
+
+gss <- read_csv((file="data/smallgss2016.csv"), 
+                na = c("", "Don't know",
+                       "No answer", "Not applicable"))
+
+print(gss)
+```
+
+## Instagram and Snapchat, by sex
+
+Creation of a  new variable, `snap_insta` that is *Yes* if the respondent reported using any of Snapchat (`snapchat`) or Instagram (`instagrm`), and *No* if not. 
+
+
+```{r}
+
+snap_insta <- gss %>% 
+  mutate(
+    snap_or_insta = ifelse( 
+      snapchat=="Yes" | instagrm=="Yes", "Yes",
+      ifelse(snapchat=="No" | instagrm=="No", "No", NA))
+    
+  )
+
+print(snap_insta)
+      
+ 
+
+```
+
+
+
+We calculate the proportion of Yes’s for `snap_insta` among those who answered the question, i.e. excluding NAs.
+
+
+```{r}
+
+yes_n <-snap_insta %>% 
+ filter(snap_or_insta=="Yes") %>%  
+  summarise(
+    yes_count = n()
+  ) 
+  
+ no_n <- snap_insta %>%
+   
+   filter(snap_or_insta=="No") %>% 
+  summarise (
+    no_count = n()
+  )
+  
+proportion <- yes_n / (yes_n + no_n)
+print(proportion)
+
+
+
+
+```
+
+
+
+We construct 95% CIs for men and women who used either Snapchat or Instagram
+
+```{r}
+get_CI_social <- function(n_sex){
+  
+new_data <- snap_insta %>% 
+  filter(
+    sex == n_sex,
+    !is.na(snap_or_insta)
+  ) %>% 
+  select(snap_or_insta)
+
+new_data
+
+prop.test(count(new_data$snap_or_insta=="Yes"), 
+          nrow(new_data),
+          conf.level = 0.95)
+
+p_hat <- count(new_data$snap_or_insta=="Yes") / nrow(new_data)
+
+upper_CI <- p_hat + 1.96*sqrt((p_hat*(1-p_hat))/nrow(new_data))
+names(upper_CI) <- "Upper CI"
+lower_CI <- p_hat - 1.96*sqrt((p_hat*(1-p_hat))/nrow(new_data))
+names(lower_CI) <- "Lower CI"
+
+return(c(n_sex, upper_CI, lower_CI))
+}
+
+get_CI_social("Male")
+get_CI_social("Female")
+
+```
+
+
+
+## Twitter, by education level
+
+Can we estimate the *population* proportion of Twitter users by education level in 2016?. 
+
+```{r}
+gss %>% 
+  filter(
+    twitter == "Yes"
+  ) %>% 
+  group_by(
+    degree
+  ) %>% 
+  summarise(
+    proportion_degree = count(degree)
+  ) %>% 
+  mutate(
+    proportion_degree = proportion_degree / sum(proportion_degree)
+  )
+```
+
+We Turn `degree` from a character variable into a factor variable:
+
+```{r}
+gss <- gss %>% 
+  mutate(
+    degree = factor(degree, levels=c("Lt high school", "High school", "Junior college", "Bachelor", "Graduate", "NA"))
+  )
+```
+
+
+We create a  new variable, `bachelor_graduate` that is *Yes* if the respondent has either a `Bachelor` or `Graduate` degree.
+
+```{r}
+bachelor_graduate_data <- gss %>% 
+  mutate(
+    bachelor_graduate = ifelse(degree == "Bachelor" | degree == "Graduate" & !is.na(degree), "Yes", "No")
+  )
+```
+
+
+We calculate the proportion of `bachelor_graduate` who do (Yes) and who don't (No) use twitter. 
+
+```{r}
+bachelor_graduate_data %>% 
+  filter(twitter=="Yes") %>% 
+  select(bachelor_graduate) %>% 
+  group_by(bachelor_graduate) %>% 
+  summarise(
+    proportion_bach = count(bachelor_graduate)
+  ) %>% 
+  mutate(
+    proportion_bach = proportion_bach / sum(proportion_bach)
+  )
+```
+
+We construct two 95% CIs for `bachelor_graduate` vs whether they use (Yes) and don't (No) use twitter. 
+
+```{r}
+bach_grad_twitter <- bachelor_graduate_data %>% 
+  filter(
+    twitter == "Yes",
+    !is.na(bachelor_graduate)
+  ) %>% 
+  select(bachelor_graduate)
+
+p_hat <- count(bach_grad_twitter$bachelor_graduate=="Yes") / nrow(bach_grad_twitter)
+
+upper_CI <- p_hat + 1.96*sqrt((p_hat*(1-p_hat))/nrow(bach_grad_twitter))
+names(upper_CI) <- "Upper CI"
+lower_CI <- p_hat - 1.96*sqrt((p_hat*(1-p_hat))/nrow(bach_grad_twitter))
+names(lower_CI) <- "Lower CI"
+
+upper_CI
+lower_CI
+
+bach_grad_twitter <- bachelor_graduate_data %>% 
+  filter(
+    twitter == "No",
+    !is.na(bachelor_graduate)
+  ) %>% 
+  select(bachelor_graduate)
+
+p_hat <- count(bach_grad_twitter$bachelor_graduate=="Yes") / nrow(bach_grad_twitter)
+
+upper_CI <- p_hat + 1.96*sqrt((p_hat*(1-p_hat))/nrow(bach_grad_twitter))
+names(upper_CI) <- "Upper CI"
+lower_CI <- p_hat - 1.96*sqrt((p_hat*(1-p_hat))/nrow(bach_grad_twitter))
+names(lower_CI) <- "Lower CI"
+
+upper_CI
+lower_CI
+```
+
+
+Do these two Confidence Intervals overlap?
+
+The two intervals do not overlap, which could be because we have large enough sample size that we are confident in our observations.
+
